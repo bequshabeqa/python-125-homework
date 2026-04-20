@@ -1,0 +1,46 @@
+nt("-"*15 + " TASK 1 " + "-"*15)
+
+print("-"*15 + " TASK 1 " + "-"*15)
+
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Alice"))
+print(greet("Bob", "Good morning"))
+print(greet("მარიამი", "გამარჯობა"))
+
+
+print("-"*38)
+nt("-"*15 + " TASK 2 " + "-"*15)
+
+def circle_area(radius):
+    return 3.14159 * (radius ** 2)
+
+def circle_circumference(radius):
+    return 2 * 3.14159 * radius
+
+def circle_info(radius):
+    area = circle_area(radius)
+    circum = circle_circumference(radius)
+    return area, circum
+
+area_result, circum_result = circle_info(5)
+print(f"Area: {area_result}, Circumference: {circum_result}")
+
+
+print("-"*38)
+nt("-"*15 + " TASK 3 " + "-"*15)
+
+
+def list_stats(numbers):
+    total = sum(numbers)
+    avg = total / len(numbers)
+    smallest = min(numbers)
+    largest = max(numbers)
+    return total, avg, smallest, largest
+
+nums = [10, 25, 3, 47, 18, 32, 6]
+sum, avg, min, max = list_stats(nums)
+print(f"Sum: {sum}, Average: {avg:.2f}, Min: {min}, Max: {max}")
+
+
