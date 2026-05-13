@@ -1,0 +1,172 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ actor.fullname }}</title>
+</head>
+<body>
+
+    <h1>{{ actor.fullname }}</h1>
+    <p>{{ actor.description }}</p>
+    <p>Year: {{ actor.year }}</p>
+    <p>ID: {{ actor.id }}</p>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ actor.fullname }}</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #111827, #1f2937);
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f3f4f6;
+        }
+
+        .label {
+            font-size: 13px;
+            color: gray;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 18px;
+            color: #111827;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
+            padding: 12px 20px;
+            background: #111827;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #22c55e;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <div class="header">
+
+        <div class="avatar">
+            {{ actor.fullname|first }}
+        </div>
+
+        <h1>{{ actor.fullname }}</h1>
+
+    </div>
+
+    <div class="content">
+
+        <div class="info">
+            <div class="label">მოკლე აღწერა</div>
+            <div class="value">
+                {{ actor.description }}
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="label">დაბადების წელი</div>
+            <div class="value">
+                {{ actor.year }}
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="label">ჟანრი</div>
+            <div class="value">
+                {{ actor.unit }}
+            </div>
+        </div>
+
+        <a class="back-btn" href="{% url 'home' %}">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
